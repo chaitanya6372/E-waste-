@@ -48,22 +48,23 @@ def main():
         df = load_data('e_waste_data.csv')  # Replace with your actual CSV file name
         print("Data loaded successfully.")
         
-        # Analyze the data
-        category_counts = analyze_data(df)
-        print("Data analysis completed.")
+# Analyze the data
+category_counts = analyze_data(df)
+print("Data analysis completed.")
         
-        # Generate a report
-        generate_report(category_counts)
+# Generate a report
+generate_report(category_counts)
         
-        # Visualize the data
-        visualize_data(category_counts)
+ # Visualize the data
+ visualize_data(category_counts)
         
-    except Exception as e:
-        print(f"An error occurred: {e}")
+except Exception as e:
+    print(f"An error occurred: {e}")
 
 if __name__ == "__main__":
     main()
-import io
+
+
 
   g = sns.FacetGrid(df, col='Category', col_wrap=2)
   g.map(sns.barplot, 'Category', 'Count')
